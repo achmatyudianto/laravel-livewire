@@ -130,7 +130,7 @@
                             @endif
                             <tr>
                                 <td colspan="3">
-                                    <button type="submit" class="btn btn-dark btn-block" @if ($product->is_ready !== 1) disabled @endif>
+                                    <button type="submit" class="btn btn-dark btn-block" @if (!$product->is_ready) disabled @endif>
                                         <i class="fas fa-shopping-cart"></i> Masukkan keranjang
                                     </button>
                                 </td>
