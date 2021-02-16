@@ -43,7 +43,8 @@
                             </div>
                             <div class="row mt-1">
                                 <div class="col-md-12">
-                                    <a href="#" class="btn btn-block btn-dark">Detail</a>
+                                    <a href="{{ route('product.detail', $product->id) }}"
+                                        class="btn btn-block btn-dark">Detail</a>
                                 </div>
                             </div>
                         </div>

@@ -16,8 +16,8 @@
         </div>
         <div class="col-md-3">
             <div class="input-group mb-3">
-                <input wire:model="search" type="text" class="form-control" placeholder="Search. . ." aria-label="Search"
-                    aria-describedby="basic-addon1">
+                <input wire:model="search" type="text" class="form-control" placeholder="Search. . ."
+                    aria-label="Search" aria-describedby="basic-addon1">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">
                         <i class="fas fa-search"></i>
@@ -42,7 +42,8 @@
                             </div>
                             <div class="row mt-1">
                                 <div class="col-md-12">
-                                    <a href="#" class="btn btn-block btn-dark">Detail</a>
+                                    <a href="{{ route('product.detail', $product->id) }}"
+                                        class="btn btn-block btn-dark">Detail</a>
                                 </div>
                             </div>
                         </div>

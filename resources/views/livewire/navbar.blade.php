@@ -23,17 +23,29 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach ($ligas as $liga)
-                                <a class="dropdown-item" href="{{ route('products.liga', $liga->id) }}">{{ $liga->nama }}</a>
+                                <a class="dropdown-item"
+                                    href="{{ route('products.liga', $liga->id) }}">{{ $liga->nama }}</a>
                             @endforeach
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('products') }}">Semua Liga</a>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('history') }}">History</a>
                     </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('keranjang') }}">Keranjang
+                            <i class="fas fa-shopping-bag"></i>
+                            @if ($jumlah_pesanan !== 0)
+                                <span class="badge badge-danger">{{ $jumlah_pesanan }}</span>
+                            @endif
+                        </a>
+                    </li>
                     @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -52,7 +64,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                                                         document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
